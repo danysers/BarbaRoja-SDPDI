@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: barba_roja_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: barba_roja_2026
+      MYSQL_DATABASE: barba_roja_turnos
+    ports:
+      - "3307:3306"
+    volumes:
+      - barba_roja_data:/var/lib/mysql
+      - ./barba_roja_turnos_consultas_completo.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pbarba_roja_2026"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  barba_roja_data:
