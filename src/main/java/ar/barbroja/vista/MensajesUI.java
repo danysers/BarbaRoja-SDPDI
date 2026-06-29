@@ -8,7 +8,7 @@ import java.awt.Component;
  */
 public class MensajesUI {
     private static final String MENSAJE_PROXIMAMENTE = """
-            Función próxima a agregarse.
+            Funci\u00f3n pr\u00f3xima a agregarse.
 
             Esta funcionalidad no entra dentro de la propuesta presentada para el prototipo,
             pero se muestra para visualizar el alcance general del proyecto final.
@@ -18,7 +18,7 @@ public class MensajesUI {
     }
 
     public static void mostrarProximamente(Component parent) {
-        JOptionPane.showMessageDialog(parent, MENSAJE_PROXIMAMENTE, "Función futura", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(parent, MENSAJE_PROXIMAMENTE, "Funci\u00f3n futura", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static JButton botonProximamente(String texto, Component parent) {

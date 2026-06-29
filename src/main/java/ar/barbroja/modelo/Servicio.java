@@ -1,5 +1,7 @@
 package ar.barbroja.modelo;
 
+import ar.barbroja.util.TextoUI;
+
 public class Servicio {
     private int id;
     private String nombre;
@@ -14,12 +16,12 @@ public class Servicio {
     }
 
     public int getId() { return id; }
-    public String getNombre() { return nombre; }
+    public String getNombre() { return TextoUI.normalizar(nombre); }
     public int getDuracionMinutos() { return duracionMinutos; }
     public double getPrecio() { return precio; }
 
     @Override
     public String toString() {
-        return nombre;
+        return getNombre();
     }
 }

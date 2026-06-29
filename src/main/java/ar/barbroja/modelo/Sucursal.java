@@ -1,5 +1,7 @@
 package ar.barbroja.modelo;
 
+import ar.barbroja.util.TextoUI;
+
 public class Sucursal {
     private int id;
     private String nombre;
@@ -12,11 +14,11 @@ public class Sucursal {
     }
 
     public int getId() { return id; }
-    public String getNombre() { return nombre; }
+    public String getNombre() { return TextoUI.normalizar(nombre); }
     public boolean isActiva() { return activa; }
 
     @Override
     public String toString() {
-        return nombre;
+        return getNombre();
     }
 }
